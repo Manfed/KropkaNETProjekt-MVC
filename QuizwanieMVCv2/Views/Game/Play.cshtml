@@ -1,0 +1,32 @@
+﻿@model QuizwanieMVCv2.Models.ShuffledQuestion
+
+@{
+    ViewBag.Title = "Play";
+}
+
+<h2>Pytanie</h2>
+
+@if (Model.Answers == null)
+{
+    <div>
+        <h3>Odpowiedziałeś już na wszystkie swoje pytania.</h3>
+    </div>
+}
+else
+{
+    using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <h2>@Model.Content</h2>
+            <hr />
+            <div class="form-group btn-group">
+                @foreach (var answer in Model.Answers)
+                {
+                    @Html.ActionLink(answer, "Check", new QuizwanieMVCv2.Models.Answer { GameId = Model.GameId, QuestionId = Model.QuestionId, ChosenAnswer = answer }, new { @class = "btn btn-primary btn-lg" })
+                }
+            </div>
+        </div>
+    }
+}
+

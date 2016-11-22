@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="QuizwanieService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:44057/QuizwanieService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:44057/QuizwanieService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:44057/QuizwanieService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QuizwanieServiceV3.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IQuizwanieService_GetUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUser" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_ValidateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUser" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_ValidateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ValidateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_hashSha512_InputMessage">
+    <wsdl:part name="parameters" element="tns:hashSha512" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_hashSha512_OutputMessage">
+    <wsdl:part name="parameters" element="tns:hashSha512Response" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_isGameInProgress_InputMessage">
+    <wsdl:part name="parameters" element="tns:isGameInProgress" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_isGameInProgress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isGameInProgressResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_startLookingForGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:startLookingForGame" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_startLookingForGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:startLookingForGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_getUsersRanking_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersRanking" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_getUsersRanking_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUsersRankingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_isGameSearching_InputMessage">
+    <wsdl:part name="parameters" element="tns:isGameSearching" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_isGameSearching_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isGameSearchingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_AddQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_AddQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_AuthorizeQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_AuthorizeQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizeQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetUnauthorizedQuestions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnauthorizedQuestions" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetUnauthorizedQuestions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnauthorizedQuestionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_DeleteUnauthorizeQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnauthorizeQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_DeleteUnauthorizeQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUnauthorizeQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetUserGames_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGames" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetUserGames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserGamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_CheckAnswer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAnswer" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_CheckAnswer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckAnswerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetNextQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_GetNextQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_fill_InputMessage">
+    <wsdl:part name="parameters" element="tns:fill" />
+  </wsdl:message>
+  <wsdl:message name="IQuizwanieService_fill_OutputMessage">
+    <wsdl:part name="parameters" element="tns:fillResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IQuizwanieService">
+    <wsdl:operation name="GetUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/GetUser" message="tns:IQuizwanieService_GetUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/GetUserResponse" message="tns:IQuizwanieService_GetUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/CreateUser" message="tns:IQuizwanieService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/CreateUserResponse" message="tns:IQuizwanieService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/ValidateUser" message="tns:IQuizwanieService_ValidateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/ValidateUserResponse" message="tns:IQuizwanieService_ValidateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="hashSha512">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/hashSha512" message="tns:IQuizwanieService_hashSha512_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/hashSha512Response" message="tns:IQuizwanieService_hashSha512_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isGameInProgress">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/isGameInProgress" message="tns:IQuizwanieService_isGameInProgress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/isGameInProgressResponse" message="tns:IQuizwanieService_isGameInProgress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="startLookingForGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/startLookingForGame" message="tns:IQuizwanieService_startLookingForGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/startLookingForGameResponse" message="tns:IQuizwanieService_startLookingForGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUsersRanking">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/getUsersRanking" message="tns:IQuizwanieService_getUsersRanking_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/getUsersRankingResponse" message="tns:IQuizwanieService_getUsersRanking_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isGameSearching">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/isGameSearching" message="tns:IQuizwanieService_isGameSearching_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/isGameSearchingResponse" message="tns:IQuizwanieService_isGameSearching_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/AddQuestion" message="tns:IQuizwanieService_AddQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/AddQuestionResponse" message="tns:IQuizwanieService_AddQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/AuthorizeQuestion" message="tns:IQuizwanieService_AuthorizeQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/AuthorizeQuestionResponse" message="tns:IQuizwanieService_AuthorizeQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnauthorizedQuestions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/GetUnauthorizedQuestions" message="tns:IQuizwanieService_GetUnauthorizedQuestions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/GetUnauthorizedQuestionsResponse" message="tns:IQuizwanieService_GetUnauthorizedQuestions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnauthorizeQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/DeleteUnauthorizeQuestion" message="tns:IQuizwanieService_DeleteUnauthorizeQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/DeleteUnauthorizeQuestionResponse" message="tns:IQuizwanieService_DeleteUnauthorizeQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGames">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/GetUserGames" message="tns:IQuizwanieService_GetUserGames_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/GetUserGamesResponse" message="tns:IQuizwanieService_GetUserGames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckAnswer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/CheckAnswer" message="tns:IQuizwanieService_CheckAnswer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/CheckAnswerResponse" message="tns:IQuizwanieService_CheckAnswer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/GetNextQuestion" message="tns:IQuizwanieService_GetNextQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/GetNextQuestionResponse" message="tns:IQuizwanieService_GetNextQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="fill">
+      <wsdl:input wsaw:Action="http://tempuri.org/IQuizwanieService/fill" message="tns:IQuizwanieService_fill_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IQuizwanieService/fillResponse" message="tns:IQuizwanieService_fill_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IQuizwanieService" type="tns:IQuizwanieService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetUser">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/GetUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUser">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/ValidateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hashSha512">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/hashSha512" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isGameInProgress">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/isGameInProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="startLookingForGame">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/startLookingForGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUsersRanking">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/getUsersRanking" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isGameSearching">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/isGameSearching" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddQuestion">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/AddQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AuthorizeQuestion">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/AuthorizeQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnauthorizedQuestions">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/GetUnauthorizedQuestions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUnauthorizeQuestion">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/DeleteUnauthorizeQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserGames">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/GetUserGames" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckAnswer">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/CheckAnswer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextQuestion">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/GetNextQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fill">
+      <soap:operation soapAction="http://tempuri.org/IQuizwanieService/fill" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="QuizwanieService">
+    <wsdl:port name="BasicHttpBinding_IQuizwanieService" binding="tns:BasicHttpBinding_IQuizwanieService">
+      <soap:address location="http://localhost:44057/QuizwanieService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

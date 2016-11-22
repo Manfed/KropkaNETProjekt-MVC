@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8a2f8f5a-a9ad-4049-90d3-457916ca01ee" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:44057/QuizwanieService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="QuizwanieService.xsd" MetadataType="Schema" ID="f48ab3ef-e352-4fa7-b322-b4f4744b09ff" SourceId="1" SourceUrl="http://localhost:44057/QuizwanieService.svc?xsd=xsd1" />
+    <MetadataFile FileName="QuizwanieService1.xsd" MetadataType="Schema" ID="3b8c49c6-6a9d-4a13-9c9f-7f1feed9ed50" SourceId="1" SourceUrl="http://localhost:44057/QuizwanieService.svc?xsd=xsd2" />
+    <MetadataFile FileName="QuizwanieService.wsdl" MetadataType="Wsdl" ID="048fdde3-effb-4c41-8e5f-4d2a1e7af705" SourceId="1" SourceUrl="http://localhost:44057/QuizwanieService.svc?wsdl" />
+    <MetadataFile FileName="QuizwanieService2.xsd" MetadataType="Schema" ID="566e4caf-8600-47e3-93d4-dbb818b05431" SourceId="1" SourceUrl="http://localhost:44057/QuizwanieService.svc?xsd=xsd0" />
+    <MetadataFile FileName="QuizwanieService.disco" MetadataType="Disco" ID="3167d2ef-6b23-4a1e-a1d6-801439915fc8" SourceId="1" SourceUrl="http://localhost:44057/QuizwanieService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

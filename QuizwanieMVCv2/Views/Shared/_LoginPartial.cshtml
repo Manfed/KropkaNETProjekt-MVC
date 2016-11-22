@@ -1,0 +1,21 @@
+﻿@if (MvcApplication.userStatus.IsAuthenticated)
+{
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Witaj " + @MvcApplication.userStatus.UserName + "!", "Index", "Home", routeValues: null, htmlAttributes: new { id = "userLink" })
+            </li>
+            <li>
+                @Html.ActionLink("Wyloguj", "Logout", "Login", routeValues: null, htmlAttributes: new { id = "logoutLink" })
+            </li>
+        </ul>
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Zarejestruj się", "Register", "Login", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Zaloguj się", "Login", "Login", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+

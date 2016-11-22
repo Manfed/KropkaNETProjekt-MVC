@@ -1,0 +1,122 @@
+﻿@model IEnumerable<QuizwanieMVCv2.Models.GameDetailsModel>
+
+@{
+    ViewBag.Title = "Games";
+    var service = new QuizwanieMVCv2.QuizwanieService.QuizwanieServiceClient();
+    var isPendingGame = service.isGameSearching(MvcApplication.userStatus.UserId);
+}
+
+<h2>Gry</h2>
+
+<table class="table">
+@foreach (var item in Model) {
+    if (item.Game.IsGameOver)
+    {
+        if (item.Game.OpponentCorrectAnswers == item.Game.CallerUserCorrectAnswers)
+        {
+            <tr style="background-color: gray">
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+</td>
+                <td>
+                    <b>@item.Game.CallerUserCorrectAnswers.ToString()  :  @item.Game.OpponentCorrectAnswers.ToString()</b>
+</td>
+                <td>
+                    <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+</td>
+            </tr>
+        }
+        else if (MvcApplication.userStatus.UserId == item.Game.UserId)
+        {
+            if (item.Game.CallerUserCorrectAnswers > item.Game.OpponentCorrectAnswers)
+            {
+                <tr style="background-color: limegreen">
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+                    </td>
+                    <td>
+                        <b>@item.Game.CallerUserCorrectAnswers.ToString()  :  @item.Game.OpponentCorrectAnswers.ToString()</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr style="background-color: red">
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+                    </td>
+                    <td>
+                        <b>@item.Game.CallerUserCorrectAnswers.ToString()  :  @item.Game.OpponentCorrectAnswers.ToString()</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+                    </td>
+                </tr>
+            }
+        }
+        else if (MvcApplication.userStatus.UserId == item.Game.OpponentUserId)
+        {
+            if (item.Game.CallerUserCorrectAnswers > item.Game.OpponentCorrectAnswers)
+            {
+                <tr style="background-color: red">
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+                    </td>
+                    <td>
+                        <b>@item.Game.CallerUserCorrectAnswers.ToString()  :  @item.Game.OpponentCorrectAnswers.ToString()</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+                    </td>
+                </tr>
+            }
+            else
+            {
+                <tr style="background-color: limegreen">
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+                    </td>
+                    <td>
+                        <b>@item.Game.CallerUserCorrectAnswers.ToString()  :  item.Game.OpponentCorrectAnswers.ToString()</b>
+                    </td>
+                    <td>
+                        <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+                    </td>
+                </tr>
+            }
+        }
+    }
+    else
+    {
+        <tr>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.CallerUserName)</b>
+            </td>
+            <td>
+                <b> vs </b>
+            </td>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.OpponentName)</b>
+            </td>
+            <td>
+                <b>@Html.ActionLink("Graj", "Play", new { gameId = item.Game.Id })</b>
+            </td>
+        </tr>
+    }
+}
+
+</table>
+@if (!isPendingGame) { 
+    <hr/>
+    <div>
+        @Html.ActionLink("Nowa gra", "NewGame", "Game")
+    </div>
+}
+<hr/>
+
+<div>
+    @Html.ActionLink("Powrót", "Index", "Home")
+</div>
